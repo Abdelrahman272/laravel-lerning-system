@@ -1,0 +1,2101 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+:root {
+  --main-color: #243147;
+  --white-color: #fff;
+  --red-color: #cf413f;
+  --white-blue-color: #ebf0f8;
+}
+
+/* for webkit scrollbar */
+::-webkit-scrollbar {
+  background-color: #ebf0f8;
+  width: 11px;
+}
+
+/* for webkit scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+
+@font-face {
+  font-family: " Sansation_Regular";
+  src: url(../fonts/Sansation_Regular.ttf);
+}
+#top {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  cursor: pointer;
+  bottom: 30px;
+  right: -100px;
+  background-color: var(--red-color);
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+#top.show {
+  transform: translateX(-150px);
+}
+@media (max-width: 767px) {
+  #top.show {
+    transform: translateX(-120px);
+  }
+}
+
+.animate-top {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.animate-bottom {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.modal {
+  z-index: 999999;
+}
+.modal .modal-content .modal-header button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.modal .modal-content .modal-header .modal-title {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: var(--main-color);
+}
+.modal .modal-content .modal-body p {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--main-color);
+}
+.modal .modal-content .modal-footer .btn {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  background-color: var(--red-color);
+  color: #fff;
+}
+.modal .modal-content .modal-footer .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.modal.fade .modal-dialog.modal-dialog-top {
+  transform: translateY(-100%);
+}
+
+.modal.fade.show .modal-dialog.modal-dialog-top {
+  transform: translateY(0%);
+  transition: transform 0.3s ease-out;
+}
+
+.modal-backdrop {
+  opacity: 0.5;
+}
+
+.title-section {
+  margin-bottom: 20px;
+  display: inline-block;
+  position: relative;
+}
+.title-section h2 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #243147;
+}
+@media (max-width: 540px) {
+  .title-section {
+    margin-right: 20px;
+  }
+}
+.title-section::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 42px;
+  height: 2px;
+  background-color: #cf413f;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: var(--red-color);
+}
+
+::selection {
+  color: #fff;
+  background-color: var(--red-color);
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(35deg);
+  }
+  12.5% {
+    transform: rotate(-30deg);
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  37.5% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  62.5% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+header {
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 82px;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container .logo {
+  font-family: " Sansation_Regular";
+  text-decoration: none;
+  color: #fff;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 23px;
+}
+@media (max-width: 400px) {
+  header .container .logo {
+    font-size: 20px;
+  }
+}
+header .container .logo span:nth-child(1) {
+  color: var(--red-color);
+}
+header .container .logo span:last-child {
+  font-family: "Tajawal", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+@media (max-width: 400px) {
+  header .container .logo span:last-child {
+    font-size: 13px;
+  }
+}
+@media (max-width: 991px) {
+  header .container ul {
+    display: none;
+  }
+}
+header .container li:not(:last-child) {
+  margin-left: 30px;
+}
+header .container li a {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  transition: 0.3s;
+}
+header .container li a:focus {
+  color: var(--red-color);
+}
+header .container li a:hover {
+  color: var(--red-color);
+}
+header .container .dropdown {
+  z-index: 9999;
+}
+header .container .dropdown .dropdown-menu {
+  transform: translate(0px, 39px) !important;
+  z-index: 9999;
+}
+header .container .dropdown button {
+  background-color: transparent;
+  border: transparent;
+  box-shadow: none;
+  outline: none;
+}
+header .container .dropdown button:focus {
+  box-shadow: none;
+}
+header .container .dropdown .dropdown-toggle::after {
+  display: none;
+}
+header .bars-login {
+  display: none;
+}
+@media (max-width: 991px) {
+  header .bars-login {
+    display: block;
+  }
+}
+header .bars-login button i {
+  color: #fff;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+header .bars-login ul {
+  position: relative;
+  margin-top: 5px !important;
+}
+header .bars-login ul::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  border-style: solid;
+  border-width: 8px;
+  border-color: transparent transparent white transparent;
+}
+header .bars-login ul li a {
+  color: var(--main-color);
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+}
+header .bars-login ul li a:hover {
+  background-color: #fff;
+}
+@media (max-width: 991px) {
+  header .links-index {
+    display: none;
+  }
+}
+header .bars-home {
+  display: none;
+}
+@media (max-width: 991px) {
+  header .bars-home {
+    display: block;
+  }
+}
+header .bars-home button i {
+  color: #fff;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: none;
+}
+header .bars-home ul {
+  position: relative;
+  margin-top: 15px !important;
+}
+header .bars-home ul::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 19px;
+  border-style: solid;
+  border-width: 8px;
+  border-color: transparent transparent white transparent;
+}
+header .bars-home ul li a {
+  color: var(--main-color);
+  background-color: transparent;
+  border: none;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 600;
+  transition: 0.3s;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+header .bars-home ul li a:hover {
+  color: var(--red-color);
+}
+header .bars-home ul li a i {
+  color: var(--main-color);
+  margin-left: 0 !important;
+}
+header .bars-index {
+  display: none;
+}
+@media (max-width: 991px) {
+  header .bars-index {
+    display: block !important;
+  }
+}
+header .bars-index button i {
+  color: #fff;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+header .bars-index ul {
+  position: relative;
+  margin-top: 5px !important;
+}
+header .bars-index ul::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 14px;
+  border-style: solid;
+  border-width: 8px;
+  border-color: transparent transparent white transparent;
+}
+header .bars-index ul li a {
+  color: var(--main-color);
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+}
+header .bars-index ul li a:hover {
+  background-color: #fff;
+}
+header .links {
+  display: flex;
+  align-items: center;
+  z-index: 999999;
+}
+header .links a {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  transition: 0.3s;
+  text-decoration: none;
+  margin-left: 15px;
+  background-color: var(--red-color);
+  padding: 5px 14px;
+  border-radius: 21px;
+  border: 1px solid var(--red-color);
+}
+header .links a:hover {
+  border-color: #fff;
+  background-color: transparent;
+}
+header .links .login-index {
+  border-color: #fff;
+  background-color: transparent;
+}
+header .links .login-index:hover {
+  background-color: var(--red-color);
+  border-color: var(--red-color);
+}
+header .links i {
+  color: #fff;
+  font-size: 18px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+header .links i:not(:last-child) {
+  margin-left: 13px;
+}
+header .links .bell.bell.active {
+  animation: ring 2s ease infinite;
+}
+header .links .bell.bell::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--red-color);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+@media (max-width: 991px) {
+  header .links .notifaication {
+    display: none;
+  }
+}
+header .links .notifaication ul {
+  position: relative;
+  margin-top: 15px !important;
+}
+header .links .notifaication ul::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 19px;
+  border-style: solid;
+  border-width: 8px;
+  border-color: transparent transparent white transparent;
+}
+header .links .notifaication ul li {
+  cursor: pointer;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+}
+header .links .notifaication ul li:not(:last-child) {
+  border-bottom: 1px solid #f6f6f6;
+}
+@media (max-width: 991px) {
+  header .links .user {
+    display: none;
+  }
+}
+header .links .user ul {
+  position: relative;
+  margin-top: 15px !important;
+}
+header .links .user ul::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 19px;
+  border-style: solid;
+  border-width: 8px;
+  border-color: transparent transparent white transparent;
+}
+header .links .user ul li a {
+  color: var(--main-color);
+  background-color: transparent;
+  border: none;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 600;
+  transition: 0.3s;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+header .links .user ul li a:hover {
+  color: var(--red-color);
+}
+header .links .user ul li a i {
+  color: var(--main-color);
+  margin-left: 0 !important;
+}
+header .links .pass {
+  border-bottom: 1px solid #e9e9ef;
+  width: 100%;
+}
+
+.home-page .landing {
+  position: relative;
+  background: var(--main-color);
+  z-index: 10;
+  min-height: 50vh;
+}
+.home-page .landing .container {
+  background-color: #fff;
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  position: relative;
+  top: 30px;
+}
+.home-page .landing .container .image {
+  background-image: url("../imgs/landing-web.png") !important;
+  width: 546px;
+  height: 364px;
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1150px) {
+  .home-page .landing .container .image {
+    width: 478px;
+  }
+}
+@media (max-width: 991px) {
+  .home-page .landing .container .image {
+    width: 100%;
+    background-image: url("../imgs/landing-mob.png") !important;
+    background-position: center;
+    background-size: 500px;
+  }
+  .home-page .landing .container .image img {
+    display: none;
+  }
+}
+.home-page .landing .container .image img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.home-page .landing .container .image .man {
+  top: 8px;
+  right: 15px;
+}
+.home-page .landing .container .image .woman1 {
+  top: 90px;
+  left: 80px;
+}
+.home-page .landing .container .image .woman2 {
+  bottom: 50px;
+  right: 50px;
+}
+.home-page .landing .container .text h3 {
+  font-size: 32px;
+  font-family: "Tajawal";
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.home-page .landing .container .text h3::after {
+  content: "";
+  position: absolute;
+  width: 82px;
+  height: 36px;
+  border-radius: 7px;
+  background-color: #ebf0f8;
+  bottom: -15px;
+  left: -20px;
+  z-index: -1;
+}
+.home-page .landing .container .text p {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--main-color);
+  line-height: 29px;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  z-index: 1;
+}
+.home-page .landing .container .text p span {
+  font-weight: bold;
+}
+.home-page .landing .container .text p::before {
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 82px;
+  background-color: #fadbd7;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  border-radius: 7px;
+}
+.home-page .landing .container .text p::after {
+  content: "";
+  position: absolute;
+  width: 82px;
+  height: 36px;
+  background-color: #f9f9f9;
+  left: 40px;
+  bottom: -4px;
+  z-index: -1;
+  border-radius: 7px;
+}
+.home-page .features {
+  background: #f9f9f9;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+.home-page .features .cards {
+  background-color: var(--white-blue-color);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 109px;
+  padding: 0 20px;
+}
+@media (max-width: 1200px) {
+  .home-page .features .cards {
+    margin-bottom: 20px;
+  }
+}
+.home-page .features .cards .text {
+  margin-right: 10px;
+}
+.home-page .features .cards .text h4 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+}
+.home-page .features .cards .text p {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 0 !important;
+}
+.home-page .qoute {
+  margin: 20px 0;
+}
+.home-page .qoute .container h1 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  text-align: center;
+  padding: 35px;
+  color: var(--main-color);
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+.home-page .qoute .container h1 span {
+  color: var(--red-color);
+}
+@media (max-width: 440px) {
+  .home-page .qoute .container h1 {
+    font-size: 30px;
+    line-height: 40px;
+    padding: 35px 0;
+  }
+}
+
+.login-page {
+  background-color: #fff;
+}
+.login-page h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.login-page h3::before {
+  bottom: -9px;
+}
+@media (max-width: 435px) {
+  .login-page h3::before {
+    right: 80px;
+    left: 0;
+  }
+}
+.login-page .container {
+  background-color: #f9f9f9;
+  border-radius: 0 0 18px 18px;
+  padding-top: 50px;
+}
+@media (max-width: 991px) {
+  .login-page .container .row {
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 991px) {
+  .login-page .container .image img {
+    display: none;
+  }
+}
+.login-page .container .text h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  color: var(--main-color);
+}
+.login-page .container .text p {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  color: var(--main-color);
+  font-size: 18px;
+}
+.login-page .container .text p a {
+  color: var(--red-color);
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: none;
+}
+.login-page .container form input {
+  width: 100%;
+  border: 1px solid #243147;
+  border-radius: 9px;
+  padding: 8px 20px;
+  outline: none;
+  text-align: center;
+}
+.login-page .container form input::-moz-placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  flex-direction: row-reverse;
+  text-align: center;
+}
+.login-page .container form input::placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  flex-direction: row-reverse;
+  text-align: center;
+}
+.login-page .container form .input-two {
+  margin-left: 1rem;
+}
+@media (max-width: 570px) {
+  .login-page .container form .input-two {
+    margin-left: 0;
+  }
+}
+.login-page .container form .log-links {
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.login-page .container form .log-links a {
+  text-decoration: none;
+}
+.login-page .container form .log-links .forget-pass {
+  color: var(--red-color);
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-block;
+  margin-top: 10px;
+}
+.login-page .container form .log-links .sumbit-pass {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: var(--red-color);
+  border-radius: 33px;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 210px;
+  padding: 10px 14px;
+}
+
+.sign_up-page {
+  background-color: #fff;
+}
+.sign_up-page .container {
+  background-color: #f9f9f9;
+  border-radius: 0 0 18px 18px;
+  padding-top: 50px;
+}
+.sign_up-page .container .error-message {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 600;
+  color: var(--red-color);
+}
+.sign_up-page .container .text h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.sign_up-page .container .text h3::before {
+  bottom: -9px;
+}
+@media (max-width: 435px) {
+  .sign_up-page .container .text h3::before {
+    right: 80px;
+    left: 0;
+  }
+}
+.sign_up-page .container .text p {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+}
+.sign_up-page .container .text p a {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: var(--red-color);
+  text-decoration: none;
+}
+.sign_up-page .container form {
+  padding: 20px 150px 0 150px;
+}
+@media (max-width: 991px) {
+  .sign_up-page .container form {
+    padding: 20px 80px 0 80px;
+  }
+}
+@media (max-width: 767px) {
+  .sign_up-page .container form {
+    padding: 20px 60px 0 60px;
+  }
+}
+@media (max-width: 767px) {
+  .sign_up-page .container form {
+    padding: 20px 40px 0 40px;
+  }
+}
+@media (max-width: 430px) {
+  .sign_up-page .container form {
+    padding: 20px 20px 0 20px;
+  }
+}
+.sign_up-page .container form small {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: var(--red-color) !important;
+  margin-right: 5px;
+}
+.sign_up-page .container form input {
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid var(--main-color);
+}
+.sign_up-page .container form input::-moz-placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+.sign_up-page .container form input::placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+.sign_up-page .container form input:focus {
+  box-shadow: none;
+  outline: none;
+}
+.sign_up-page .container form select {
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid var(--main-color);
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: #6c757d;
+  font-size: 16px;
+}
+.sign_up-page .container form select:focus {
+  box-shadow: none;
+  outline: none;
+}
+.sign_up-page .container form select option {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: #6c757d;
+}
+.sign_up-page .container form button {
+  text-decoration: none;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  background-color: var(--red-color);
+  padding: 10px 40px;
+  margin-top: 10px;
+  border-radius: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 99;
+  border: none;
+}
+.sign_up-page .container .image {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+@media (max-width: 991px) {
+  .sign_up-page .container .image img {
+    display: none;
+  }
+}
+
+.contact .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.contact .container .card {
+  background-color: var(--white-blue-color);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  padding: 0 20px;
+  border-color: transparent;
+}
+@media (max-width: 991px) {
+  .contact .container .card {
+    margin-bottom: 15px;
+  }
+}
+.contact .container .card i {
+  color: var(--main-color);
+}
+.contact .container .card h5 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--main-color);
+}
+.contact .container .card p {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 0 !important;
+  color: var(--red-color);
+}
+.contact .container .card .contact-link a {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--red-color);
+}
+.contact .container .card .contact-link a:hover {
+  color: var(--main-color);
+}
+
+.question .container {
+  text-align: center;
+}
+.question .container h2 {
+  color: var(--main-color);
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+}
+.question .container p {
+  color: var(--main-color);
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+}
+.question .container p span {
+  color: var(--red-color);
+}
+
+footer {
+  background-color: var(--main-color);
+  width: 100%;
+}
+footer .container {
+  padding: 35px;
+  border-bottom: 1px solid #a5b7d9;
+}
+@media (max-width: 767px) {
+  footer .container .res-footer {
+    margin-bottom: 25px;
+  }
+}
+footer .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+  letter-spacing: -0.18px;
+}
+footer .container .logo-footer .logo {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+footer .container .logo-footer .logo span {
+  color: var(--red-color);
+}
+footer .container .link {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 20px;
+}
+footer .container .links-footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+footer .container .links-footer a {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  color: #a5b7d9;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  position: relative;
+}
+footer .container .links-footer a:before {
+  content: "";
+  content: "";
+  position: absolute;
+  top: 48%;
+  right: 0;
+  width: 6px;
+  border-radius: 10px;
+  height: 2px;
+  background-color: #a5b7d9;
+}
+footer .container .links-footer a:hover {
+  color: #fff;
+}
+footer .last-link-page {
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: #a5b7d9;
+}
+footer .last-link-page .footer-qoute {
+  direction: ltr;
+  padding: 0 15px 0 15px;
+  line-height: 35px;
+}
+footer .last-link-page i {
+  color: var(--red-color);
+}
+@media (max-width: 562px) {
+  footer .last-link-page .heart {
+    display: none;
+  }
+}
+footer .last-link-page a {
+  font-family: " Sansation_Regular";
+  text-decoration: none;
+  color: #a5b7d9;
+  position: relative;
+  transition: 0.3s;
+}
+footer .last-link-page a:before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+footer .last-link-page a:hover {
+  color: #fff;
+}
+footer .last-link-page a:hover::before {
+  width: 100%;
+}
+
+.code-page .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.code-page .container h3:before {
+  bottom: -2px;
+}
+.code-page .container .row {
+  background-color: #f6f6f6;
+  padding: 35px;
+  border-radius: 21px;
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 770px) {
+  .code-page .container .row {
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-direction: column-reverse;
+  }
+}
+.code-page .container .row .text p {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 15px;
+  padding: 0 10px 10px 10px;
+  color: var(--red-color);
+  text-align: center;
+}
+@media (max-width: 770px) {
+  .code-page .container .row .text p {
+    margin-bottom: 10px;
+    padding: 0;
+  }
+}
+.code-page .container .row form label {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+.code-page .container .row form input {
+  background-color: #e9ecef;
+  box-shadow: none;
+}
+.code-page .container .row form input:focus {
+  border-color: #ced4da;
+}
+.code-page .container .row form .form-text {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+}
+.code-page .container .row form button {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  margin-top: 10px;
+}
+.code-page .container .row form button:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.exam-page .container h3,
+.exam-page .container h6 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.exam-page .container h6 span {
+  color: var(--red-color);
+}
+.exam-page .container .num_question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  flex-direction: row-reverse;
+}
+.exam-page .container #timer {
+  font-family: "Tajawal";
+  text-align: center;
+  background-color: #b7dbf9;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.exam-page .container #timer span {
+  font-family: " Sansation_Regular";
+}
+.exam-page .container .question {
+  border: 1px solid var(--main-color);
+  border-radius: 21px;
+  padding: 35px;
+  text-align: end;
+}
+.exam-page .container .question h4 {
+  font-family: " Sansation_Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+}
+.exam-page .container .question .answers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+@media (max-width: 767px) {
+  .exam-page .container .question .answers {
+    align-items: end;
+    flex-direction: column;
+  }
+}
+.exam-page .container .question .answers .q {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+.exam-page .container .question .answers .q label {
+  margin-left: 10px;
+}
+.exam-page .container .answer-deliver {
+  font-family: "Tajawal";
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.exam-page .container .answer-deliver:focus {
+  box-shadow: none;
+}
+
+.results-page .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.results-page .container .body-results {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  background-color: #f6f6f6;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .results-page .container .body-results {
+    flex-direction: column;
+  }
+}
+.results-page .container .body-results .right-right-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color);
+}
+.results-page .container .body-results .right-right-result img {
+  margin-left: 8px;
+}
+.results-page .container .body-results .right-right-result h6 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.results-page .container .body-results .body-left-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.results-page .container .body-results .mid-result {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color) !important;
+  margin-left: 235px;
+}
+@media (max-width: 991px) {
+  .results-page .container .body-results .mid-result {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .results-page .container .body-results .mid-result {
+    margin-left: 150px;
+  }
+}
+@media (max-width: 440px) {
+  .results-page .container .body-results .mid-result {
+    margin-left: 50px;
+  }
+}
+.results-page .container .body-results .left-result {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color);
+}
+.results-page .container .body-results .left-result i {
+  margin-right: 10px;
+  color: var(--red-color);
+}
+
+.main-exam-page .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.main-exam-page .container .body-exam {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  background-color: #f6f6f6;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .main-exam-page .container .body-exam {
+    flex-direction: column;
+  }
+}
+.main-exam-page .container .body-exam .right-exam {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color);
+}
+.main-exam-page .container .body-exam .right-exam img {
+  margin-left: 8px;
+}
+.main-exam-page .container .body-exam .right-exam h6 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.main-exam-page .container .body-exam .main-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-exam-page .container .body-exam .main-div .mid-exam {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color);
+  margin-left: 130px;
+}
+@media (max-width: 991px) {
+  .main-exam-page .container .body-exam .main-div .mid-exam {
+    margin-left: 20px;
+  }
+}
+.main-exam-page .container .body-exam .main-div .timer {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color);
+}
+.main-exam-page .container .body-exam .left-exam {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color);
+}
+.main-exam-page .container .body-exam .left-exam i {
+  margin-right: 10px;
+  color: var(--red-color);
+}
+@media (max-width: 767px) {
+  .main-exam-page .container .body-exam .left-exam {
+    display: none;
+  }
+}
+
+.forget-pass-page .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.forget-pass-page .container h3::before {
+  bottom: -5px;
+  left: -2px;
+}
+.forget-pass-page .container .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.forget-pass-page .container .content h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: var(--red-color);
+  margin-bottom: 30px;
+}
+.forget-pass-page .container .content form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.forget-pass-page .container .content form input {
+  margin-bottom: 10px;
+  width: 500px;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: none;
+  background-color: #f9f9f9;
+  padding: 10px 24px;
+  border: 1px solid var(--white-blue-color);
+}
+@media (max-width: 540px) {
+  .forget-pass-page .container .content form input {
+    width: 400px;
+  }
+}
+@media (max-width: 440px) {
+  .forget-pass-page .container .content form input {
+    width: 350px;
+  }
+}
+@media (max-width: 380px) {
+  .forget-pass-page .container .content form input {
+    width: 250px;
+  }
+}
+.forget-pass-page .container .content form input::-moz-placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+}
+.forget-pass-page .container .content form input::placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+}
+.forget-pass-page .container .content form .btn {
+  background-color: var(--red-color);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border-color: transparent;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.lessons .container h2 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.lessons .container .card {
+  border-radius: 21px;
+  border: none;
+}
+@media (max-width: 991px) {
+  .lessons .container .card {
+    margin-bottom: 24px;
+  }
+}
+.lessons .container .card .image {
+  position: relative;
+}
+.lessons .container .card .image img {
+  position: relative;
+  border-radius: 21px 21px 0 0;
+  width: 100%;
+  height: 100%;
+}
+.lessons .container .card .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  transition: 0.3s;
+  opacity: 0;
+  border-radius: 21px 21px 0 0;
+  background: linear-gradient(180deg, rgba(235, 240, 248, 0.37) 0%, #ebf0f8 87.45%, #ebf0f8 100%);
+}
+.lessons .container .card .image h5 {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 10px;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 600;
+  color: var(--main-color);
+  font-size: 15px;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.lessons .container .card .image h5 i {
+  color: var(--red-color);
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lessons .container .card .image .run_video i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  color: #273d62;
+}
+.lessons .container .card .image:hover::before {
+  opacity: 1;
+}
+.lessons .container .card .image:hover h5 {
+  opacity: 1;
+}
+.lessons .container .card .card-body {
+  background-color: #f6f6f6;
+  border-radius: 0 0 21px 21px;
+}
+.lessons .container .card .card-body .text h5 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--main-color);
+}
+.lessons .container .card .card-body .text p {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--main-color);
+}
+.lessons .container .card .card-body .links a {
+  background-color: var(--main-color);
+  color: #fff;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  padding: 5px 40px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.video-page .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.video-page .container h3::before {
+  bottom: -3px;
+}
+.video-page .container .row {
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  padding: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 440px) {
+  .video-page .container .row {
+    padding: 20px 15px;
+  }
+}
+.video-page .container .row .video-body video {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 991px) {
+  .video-page .container .row .video-body video {
+    height: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .video-page .container .row .video-body video {
+    height: 200px;
+  }
+}
+@media (max-width: 505px) {
+  .video-page .container .row .video-body video {
+    height: 170px;
+  }
+}
+@media (max-width: 445px) {
+  .video-page .container .row .video-body video {
+    height: 150px;
+  }
+}
+@media (max-width: 400px) {
+  .video-page .container .row .video-body video {
+    height: 130px;
+  }
+}
+@media (max-width: 350px) {
+  .video-page .container .row .video-body video {
+    height: 100px;
+  }
+}
+
+.biography .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.biography .container h3::before {
+  bottom: -3px;
+}
+@media (max-width: 991px) {
+  .biography .container .image img {
+    margin-bottom: 20px;
+  }
+}
+
+.profile-page .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+}
+.profile-page .container h3::before {
+  bottom: -4px;
+}
+.profile-page .container .row {
+  background-color: #f6f6f6;
+  border-radius: 21px;
+  border: 1px solid #ced4da;
+  padding: 30px;
+  height: 350px;
+}
+@media (max-width: 990px) {
+  .profile-page .container .row {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media (max-width: 550px) {
+  .profile-page .container .row {
+    padding: 15px;
+  }
+}
+@media (max-width: 560px) {
+  .profile-page .container .row {
+    margin: 10px;
+  }
+}
+.profile-page .container .row .edit-profile {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: #fff;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
+.profile-page .container .row label {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: var(--main-color);
+}
+.profile-page .container .row input {
+  outline: none;
+  background-color: #e9ecef;
+  box-shadow: none;
+}
+.profile-page .container .row input:focus {
+  border-color: #ced4da;
+}
+.profile-page .container .row input::-moz-placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: var(--main-color);
+}
+.profile-page .container .row input::placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: var(--main-color);
+}
+.profile-page .container .row .form-password {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: var(--red-color);
+}
+.profile-page .container .row select {
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-family: "Tajawal";
+  font-style: normal;
+  background-color: #e9ecef;
+  font-weight: 500;
+  border-radius: 5px;
+  border-color: #ced4da;
+}
+
+.ask-chat-page .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+.ask-chat-page .container h3:before {
+  bottom: -2px;
+}
+.ask-chat-page .container .row {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+}
+@media (max-width: 550px) {
+  .ask-chat-page .container .row {
+    margin: 0 7px;
+    padding: 10px;
+  }
+}
+.ask-chat-page .container .row .left .teacher {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  float: left;
+}
+.ask-chat-page .container .row .left .teacher .image img {
+  width: 65px;
+  height: 60px;
+  border-radius: 50%;
+}
+@media (max-width: 550px) {
+  .ask-chat-page .container .row .left .teacher .image img {
+    display: none;
+  }
+}
+.ask-chat-page .container .row .left .teacher p {
+  background-color: var(--white-blue-color);
+  padding: 12px;
+  border-radius: 10px;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  direction: ltr;
+  text-align: end;
+  position: relative;
+  flex-wrap: wrap;
+  direction: ltr;
+}
+.ask-chat-page .container .row .left .teacher p:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -22px;
+  border-style: solid;
+  border-width: 12px;
+  border-color: transparent var(--white-blue-color) transparent transparent;
+}
+.ask-chat-page .container .row .left .teacher p:after {
+  content: "مسيو مصطفى";
+  position: absolute;
+  top: -22px;
+  right: 5px;
+  color: var(--red-color);
+}
+.ask-chat-page .container .row .right .student {
+  display: flex;
+  align-items: center;
+}
+.ask-chat-page .container .row .right .student p {
+  background-color: var(--main-color);
+  padding: 12px;
+  color: #fff;
+  border-radius: 10px;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  direction: ltr;
+  text-align: end;
+  position: relative;
+  flex-wrap: wrap;
+}
+.ask-chat-page .container .row .right .student p:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -22px;
+  border-style: solid;
+  border-width: 12px;
+  border-color: transparent transparent transparent var(--main-color);
+}
+.ask-chat-page .container .row .right .student p:after {
+  content: "*** طالب";
+  position: absolute;
+  top: -22px;
+  right: 5px;
+  color: var(--red-color);
+}
+@media (max-width: 550px) {
+  .ask-chat-page .container .row .ask {
+    flex-direction: column;
+  }
+}
+.ask-chat-page .container .row .ask textarea {
+  width: 100%;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: none;
+  padding: 10px 15px;
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+@media (max-width: 550px) {
+  .ask-chat-page .container .row .ask textarea {
+    margin-bottom: 15px;
+  }
+}
+.ask-chat-page .container .row .ask a {
+  text-decoration: none;
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: #fff;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 10px 14px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ask-teacher-page {
+  margin-top: 70px;
+}
+.ask-teacher-page .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+.ask-teacher-page .container h3::before {
+  bottom: -4px;
+}
+.ask-teacher-page .container .row {
+  border: 1px solid rgba(36, 49, 71, 0.2);
+  border-radius: 16px;
+  padding: 35px;
+  background-color: var(--white-blue-color);
+}
+@media (max-width: 600px) {
+  .ask-teacher-page .container .row {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+.ask-teacher-page .container .row .big {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .ask-teacher-page .container .row .big {
+    flex-direction: column;
+  }
+}
+.ask-teacher-page .container .row .big h4 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  margin-left: 25px;
+  margin-bottom: 0;
+}
+@media (max-width: 991px) {
+  .ask-teacher-page .container .row .big h4 {
+    margin-left: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .ask-teacher-page .container .row .big h4 {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
+.ask-teacher-page .container .row .big form {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .ask-teacher-page .container .row .big form {
+    flex-direction: column;
+  }
+}
+.ask-teacher-page .container .row .big form textarea {
+  width: 650px;
+  border-radius: 21px;
+  outline: none;
+  box-shadow: none;
+  padding: 10px 15px;
+  border: none;
+  margin-left: 25px;
+}
+@media (max-width: 1150px) {
+  .ask-teacher-page .container .row .big form textarea {
+    width: 500px;
+  }
+}
+@media (max-width: 991px) {
+  .ask-teacher-page .container .row .big form textarea {
+    width: 350px;
+  }
+}
+@media (max-width: 420px) {
+  .ask-teacher-page .container .row .big form textarea {
+    width: 300px;
+  }
+}
+@media (max-width: 390px) {
+  .ask-teacher-page .container .row .big form textarea {
+    width: 260px;
+  }
+}
+@media (max-width: 320px) {
+  .ask-teacher-page .container .row .big form textarea {
+    width: 200px;
+  }
+}
+@media (max-width: 265px) {
+  .ask-teacher-page .container .row .big form textarea {
+    width: 150px;
+  }
+}
+@media (max-width: 600px) {
+  .ask-teacher-page .container .row .big form textarea {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
+.ask-teacher-page .container .row .big form textarea::-moz-placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+}
+.ask-teacher-page .container .row .big form textarea::placeholder {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+}
+.ask-teacher-page .container .row .big form button {
+  background-color: var(--main-color);
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  padding: 10px 14px;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.answer-teacher-page {
+  margin-top: 70px;
+}
+.answer-teacher-page .container h3 {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+.answer-teacher-page .container h3::before {
+  bottom: -3px;
+}
+.answer-teacher-page .container .row {
+  border: 1px solid rgba(36, 49, 71, 0.2);
+  border-radius: 16px;
+  padding: 35px;
+  background-color: var(--white-blue-color);
+}
+@media (max-width: 767px) {
+  .answer-teacher-page .container .row {
+    margin: 0 10px;
+  }
+}
+@media (max-width: 767px) {
+  .answer-teacher-page .container .row {
+    padding: 25px !important;
+  }
+}
+@media (max-width: 540px) {
+  .answer-teacher-page .container .row {
+    padding: 15px !important;
+  }
+}
+.answer-teacher-page .container .row p {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  color: var(--main-color);
+  font-size: 20px;
+}
+.answer-teacher-page .container .row .answer-question {
+  color: var(--red-color);
+}/*# sourceMappingURL=style.css.map */
